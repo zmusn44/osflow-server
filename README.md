@@ -1,37 +1,25 @@
 # osflow-server
 
 #### 介绍
-基于SpringBoot的流程微服务版本
+osflow-server是基于Spring Boot 的流程微服务项目，对外提供Restful服务。
 
 #### 软件架构
-软件架构说明
+Spring Boot + osflow-engine + druid
 
 
-#### 安装教程
+#### 接口设计
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+```
+1、获取所有流程信息                       /osflow/getProcessMsg
+2、打开审批处理单前初始化                  /osflow/openProcess
+3、启动或提交流程                         /osflow/submitProcess
+4、获取审批过程信息                       /osflow/getApprovalInfo
+5、获取用户代码信息                       /osflow/userTodo
+```
 
 #### 使用说明
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+流程定义工具：[osflow-designer](https://gitee.com/openEA/osflow-designer)
 
-#### 参与贡献
+详细帮助文档：http://open.linkey.cn/osbpm/r?wf_num=P_openLinkey_N002&treeid=T_openLinkey_N003&docVn=osflow-server_1_0
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
