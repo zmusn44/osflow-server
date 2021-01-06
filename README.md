@@ -3,8 +3,12 @@
 #### 介绍
 osflow-server是基于Spring Boot 的流程微服务项目，对外提供Restful服务。
 
+
+
 #### 软件架构
+
 Spring Boot + osflow-engine + druid
+
 
 
 #### 接口设计
@@ -17,9 +21,18 @@ Spring Boot + osflow-engine + druid
 5、获取用户代码信息                       /osflow/userTodo
 ```
 
+
+
 #### 使用说明
 
 流程定义工具：[osflow-designer](https://gitee.com/openEA/osflow-designer)
 
 详细帮助文档：http://open.linkey.cn/osbpm/r?wf_num=P_openLinkey_N002&treeid=T_openLinkey_N003&docVn=osflow-server_1_0
 
+
+
+####  开源声明
+
+本项目采用双重许可模式(GPL协议 + 商业许可协议)
+
+QQ交流群：823545910
