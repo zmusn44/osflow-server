@@ -1,4 +1,4 @@
-package cn.linkey.flowserver;
+package cn.linkey.flowserver.config;
 
 import javax.sql.DataSource;
 

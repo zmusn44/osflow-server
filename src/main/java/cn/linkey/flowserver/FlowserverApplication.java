@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class FlowserverApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(FlowAPI.class, args);
+        SpringApplication.run(FlowserverApplication.class, args);
     }
 
 }

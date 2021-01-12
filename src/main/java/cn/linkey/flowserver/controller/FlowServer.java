@@ -1,4 +1,4 @@
-package cn.linkey.flowserver;
+package cn.linkey.flowserver.controller;
 
 import cn.linkey.orm.util.Tools;
 import cn.linkey.workflow.api.WorkFlow;
@@ -19,8 +19,7 @@ import java.sql.SQLException;
  * walkwithdream@163.com
  */
 @RestController
-@SpringBootApplication
-public class FlowAPI {
+public class FlowServer {
 
     // 注入数据源对象
     @Resource
