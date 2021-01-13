@@ -3,13 +3,12 @@ package cn.linkey.flowserver.controller;
 import cn.linkey.orm.util.Tools;
 import cn.linkey.workflow.api.WorkFlow;
 import cn.linkey.workflow.api.WorkFlowImpl;
+import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -23,7 +22,7 @@ public class FlowServer {
 
     // 注入数据源对象
     @Resource
-    private DataSource dataSource;
+    private DruidDataSource dataSource;
 
     /**
      * 获取所有流程信息
@@ -48,7 +47,7 @@ public class FlowServer {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            close(conn);
+            dataSource.discardConnection(conn);
         }
 
         return result;
@@ -60,7 +59,7 @@ public class FlowServer {
      * @param userid    用户唯一ID
      * @param processid 流程ID
      * @param docUnid   文档ID，当新启动流程时，docUnid的值为start
-     * @return
+     * @return 返回需要初始化信息
      */
     @RequestMapping(value = "/osflow/openProcess/{userid}/{processid}/{docUnid}", method = RequestMethod.GET)
     public String openProcess(@PathVariable("userid") String userid, @PathVariable("processid") String processid, @PathVariable("docUnid") String docUnid) {
@@ -89,7 +88,7 @@ public class FlowServer {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            close(conn);
+            dataSource.discardConnection(conn);
         }
 
         return result;
@@ -138,7 +137,7 @@ public class FlowServer {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            close(conn);
+            dataSource.discardConnection(conn);
         }
 
         return result;
@@ -164,7 +163,7 @@ public class FlowServer {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            close(conn);
+            dataSource.discardConnection(conn);
         }
 
         return result;
@@ -195,27 +194,11 @@ public class FlowServer {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            close(conn);
+            dataSource.discardConnection(conn);
         }
 
         return result;
     }
-
-
-    /**
-     * 关闭连接简易方法
-     *
-     * @param conn 数据库连接
-     */
-    private void close(Connection conn) {
-        if (conn != null) {
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                conn = null;
-                e.printStackTrace();
-            }
-        }
-    }
+    
 
 }
