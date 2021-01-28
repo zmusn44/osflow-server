@@ -3,12 +3,13 @@ package cn.linkey.flowserver.controller;
 import cn.linkey.orm.util.Tools;
 import cn.linkey.workflow.api.WorkFlow;
 import cn.linkey.workflow.api.WorkFlowImpl;
-import com.alibaba.druid.pool.DruidDataSource;
+import com.alibaba.druid.util.JdbcUtils;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -22,7 +23,7 @@ public class FlowServer {
 
     // 注入数据源对象
     @Resource
-    private DruidDataSource dataSource;
+    private DataSource dataSource;
 
     /**
      * 获取所有流程信息
@@ -47,7 +48,7 @@ public class FlowServer {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            dataSource.discardConnection(conn);
+            JdbcUtils.close(conn);
         }
 
         return result;
@@ -88,7 +89,7 @@ public class FlowServer {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            dataSource.discardConnection(conn);
+            JdbcUtils.close(conn);
         }
 
         return result;
@@ -137,7 +138,7 @@ public class FlowServer {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            dataSource.discardConnection(conn);
+            JdbcUtils.close(conn);
         }
 
         return result;
@@ -163,7 +164,7 @@ public class FlowServer {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            dataSource.discardConnection(conn);
+            JdbcUtils.close(conn);
         }
 
         return result;
@@ -194,7 +195,7 @@ public class FlowServer {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            dataSource.discardConnection(conn);
+            JdbcUtils.close(conn);
         }
 
         return result;
