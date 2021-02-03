@@ -7,7 +7,7 @@ osflow-server是基于Spring Boot 的流程微服务项目，对外提供Restful
 
 #### 软件架构
 
-Spring Boot + osflow-engine + lkengine-db + druid
+Spring Boot + osflow-engine + osflow-designer + lkengine-db + druid
 
 
 
@@ -17,10 +17,10 @@ Spring Boot + osflow-engine + lkengine-db + druid
 一、流程审批接口
 
 1、获取所有流程信息                       /osflow/getProcessMsg
-2、打开审批处理单前初始化                  /osflow/openProcess
+2、打开审批处理单前初始化                  /osflow/openProcess/{userid}/{processid}/{docUnid}
 3、启动或提交流程                         /osflow/submitProcess
-4、获取审批过程信息                       /osflow/getApprovalInfo
-5、获取用户代码信息                       /osflow/userTodo
+4、获取审批过程信息                       /osflow/getApprovalInfo/{docUnid}
+5、获取用户代码信息                       /osflow/userTodo/{userid}
 
 
 二、流程定义接口【已内置osflow-designer实现】

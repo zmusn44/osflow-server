@@ -1,0 +1,28 @@
+{
+  "properties": [
+    {
+      "name": "cors.Access-Control-Allow-Origin",
+      "type": "java.lang.String",
+      "description": "Description for cors.Access-Control-Allow-Origin."
+    },
+    {
+      "name": "cors.Access-Control-Allow-Headers",
+      "type": "java.lang.String",
+      "description": "Description for cors.Access-Control-Allow-Headers."
+    },
+    {
+      "name": "cors.Access-Control-Allow-Methods",
+      "type": "java.lang.String",
+      "description": "Description for cors.Access-Control-Allow-Methods."
+    },
+    {
+      "name": "cors.Access-Control-Max-Age",
+      "type": "java.lang.String",
+      "description": "Description for cors.Access-Control-Max-Age."
+    },
+    {
+      "name": "cors.Access-Control-Allow-Credentials",
+      "type": "java.lang.String",
+      "description": "Description for cors.Access-Control-Allow-Credentials."
+    }
+  ] }
